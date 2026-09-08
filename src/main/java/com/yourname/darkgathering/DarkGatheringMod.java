@@ -2,6 +2,7 @@ package com.yourname.darkgathering;
 
 import com.yourname.darkgathering.client.gui.ManaAndSkillOverlay;
 import com.yourname.darkgathering.client.renderer.EvilSpiritRenderer;
+import com.yourname.darkgathering.client.renderer.GenericSpiritRenderer;
 import com.yourname.darkgathering.command.MaxManaCommand;
 import com.yourname.darkgathering.entity.ModEntities;
 import com.yourname.darkgathering.item.ModItems;
@@ -39,6 +40,8 @@ public class DarkGatheringMod {
                         output.accept(ModItems.DARK_GATHERING_BOOK.get());
                         output.accept(ModItems.SEWING_NEEDLE.get());
                         output.accept(ModItems.BROKEN_DOLL.get());
+
+                        // Plush Dolls
                         output.accept(ModItems.PLUSH_DOLL_BEAR.get());
                         output.accept(ModItems.PLUSH_DOLL_BUNNY.get());
                         output.accept(ModItems.PLUSH_DOLL_GHOST.get());
@@ -46,6 +49,14 @@ public class DarkGatheringMod {
                         output.accept(ModItems.PLUSH_DOLL_PUPPY.get());
                         output.accept(ModItems.PLUSH_DOLL_FOX.get());
                         output.accept(ModItems.PLUSH_DOLL_DEMON.get());
+
+                        // Spawn Eggs
+                        output.accept(ModItems.EVIL_SPIRIT_SPAWN_EGG.get());
+                        output.accept(ModItems.ASURA_SPIRIT_SPAWN_EGG.get());
+                        output.accept(ModItems.NURSE_SPIRIT_SPAWN_EGG.get());
+                        output.accept(ModItems.HEAD_SPIRIT_SPAWN_EGG.get());
+                        output.accept(ModItems.SHADOW_CHILD_SPAWN_EGG.get());
+                        output.accept(ModItems.OIRAN_SPIRIT_SPAWN_EGG.get());
                     })
                     .build());
 
@@ -78,13 +89,13 @@ public class DarkGatheringMod {
 
         @SubscribeEvent
         public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
-            event.registerEntityRenderer(ModEntities.EVIL_SPIRIT.get(), ctx -> new com.yourname.darkgathering.client.renderer.GenericSpiritRenderer<>(ctx, "evil_spirit"));
-            event.registerEntityRenderer(ModEntities.GRADUATE_BASE.get(), ctx -> new com.yourname.darkgathering.client.renderer.GenericSpiritRenderer<>(ctx, "evil_spirit"));
-            event.registerEntityRenderer(ModEntities.ASURA_SPIRIT.get(), ctx -> new com.yourname.darkgathering.client.renderer.GenericSpiritRenderer<>(ctx, "asura_spirit"));
-            event.registerEntityRenderer(ModEntities.NURSE_SPIRIT.get(), ctx -> new com.yourname.darkgathering.client.renderer.GenericSpiritRenderer<>(ctx, "nurse_spirit"));
-            event.registerEntityRenderer(ModEntities.HEAD_SPIRIT.get(), ctx -> new com.yourname.darkgathering.client.renderer.GenericSpiritRenderer<>(ctx, "head_spirit"));
-            event.registerEntityRenderer(ModEntities.SHADOW_CHILD.get(), ctx -> new com.yourname.darkgathering.client.renderer.GenericSpiritRenderer<>(ctx, "shadow_child"));
-            event.registerEntityRenderer(ModEntities.OIRAN_SPIRIT.get(), ctx -> new com.yourname.darkgathering.client.renderer.GenericSpiritRenderer<>(ctx, "oiran_spirit"));
+            event.registerEntityRenderer(ModEntities.EVIL_SPIRIT.get(), ctx -> new GenericSpiritRenderer<>(ctx, "evil_spirit"));
+            event.registerEntityRenderer(ModEntities.GRADUATE_BASE.get(), ctx -> new GenericSpiritRenderer<>(ctx, "evil_spirit"));
+            event.registerEntityRenderer(ModEntities.ASURA_SPIRIT.get(), ctx -> new GenericSpiritRenderer<>(ctx, "asura_spirit"));
+            event.registerEntityRenderer(ModEntities.NURSE_SPIRIT.get(), ctx -> new GenericSpiritRenderer<>(ctx, "nurse_spirit"));
+            event.registerEntityRenderer(ModEntities.HEAD_SPIRIT.get(), ctx -> new GenericSpiritRenderer<>(ctx, "head_spirit"));
+            event.registerEntityRenderer(ModEntities.SHADOW_CHILD.get(), ctx -> new GenericSpiritRenderer<>(ctx, "shadow_child"));
+            event.registerEntityRenderer(ModEntities.OIRAN_SPIRIT.get(), ctx -> new GenericSpiritRenderer<>(ctx, "oiran_spirit"));
             event.registerEntityRenderer(ModEntities.SUMMON_RITUAL.get(), NoopRenderer::new);
         }
 

@@ -2,8 +2,13 @@ package com.yourname.darkgathering.entity;
 
 import com.yourname.darkgathering.DarkGatheringMod;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
+import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -26,27 +31,27 @@ public class ModEntities {
                     .build("graduate_base"));
 
     public static final RegistryObject<EntityType<AsuraSpiritEntity>> ASURA_SPIRIT = ENTITY_TYPES.register("asura_spirit",
-            () -> EntityType.Builder.of(AsuraSpiritEntity::new, MobCategory.CREATURE)
+            () -> EntityType.Builder.of(AsuraSpiritEntity::new, MobCategory.MONSTER)
                     .sized(0.7F, 2.1F)
                     .build("asura_spirit"));
 
     public static final RegistryObject<EntityType<NurseSpiritEntity>> NURSE_SPIRIT = ENTITY_TYPES.register("nurse_spirit",
-            () -> EntityType.Builder.of(NurseSpiritEntity::new, MobCategory.CREATURE)
+            () -> EntityType.Builder.of(NurseSpiritEntity::new, MobCategory.MONSTER)
                     .sized(0.6F, 1.85F)
                     .build("nurse_spirit"));
 
     public static final RegistryObject<EntityType<HeadSpiritEntity>> HEAD_SPIRIT = ENTITY_TYPES.register("head_spirit",
-            () -> EntityType.Builder.of(HeadSpiritEntity::new, MobCategory.CREATURE)
+            () -> EntityType.Builder.of(HeadSpiritEntity::new, MobCategory.MONSTER)
                     .sized(1.2F, 1.2F)
                     .build("head_spirit"));
 
     public static final RegistryObject<EntityType<ShadowChildEntity>> SHADOW_CHILD = ENTITY_TYPES.register("shadow_child",
-            () -> EntityType.Builder.of(ShadowChildEntity::new, MobCategory.CREATURE)
+            () -> EntityType.Builder.of(ShadowChildEntity::new, MobCategory.MONSTER)
                     .sized(0.5F, 1.2F)
                     .build("shadow_child"));
 
     public static final RegistryObject<EntityType<OiranSpiritEntity>> OIRAN_SPIRIT = ENTITY_TYPES.register("oiran_spirit",
-            () -> EntityType.Builder.of(OiranSpiritEntity::new, MobCategory.CREATURE)
+            () -> EntityType.Builder.of(OiranSpiritEntity::new, MobCategory.MONSTER)
                     .sized(0.6F, 1.9F)
                     .build("oiran_spirit"));
 
@@ -68,5 +73,15 @@ public class ModEntities {
         event.put(HEAD_SPIRIT.get(), HeadSpiritEntity.createAttributes().build());
         event.put(SHADOW_CHILD.get(), ShadowChildEntity.createAttributes().build());
         event.put(OIRAN_SPIRIT.get(), OiranSpiritEntity.createAttributes().build());
+    }
+
+    @SubscribeEvent
+    public static void registerSpawnPlacements(SpawnPlacementRegisterEvent event) {
+        event.register(EVIL_SPIRIT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+        event.register(ASURA_SPIRIT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+        event.register(NURSE_SPIRIT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+        event.register(HEAD_SPIRIT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+        event.register(SHADOW_CHILD.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+        event.register(OIRAN_SPIRIT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
     }
 }
