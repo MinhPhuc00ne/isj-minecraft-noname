@@ -78,13 +78,13 @@ public class DarkGatheringMod {
 
         @SubscribeEvent
         public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
-            event.registerEntityRenderer(ModEntities.EVIL_SPIRIT.get(), EvilSpiritRenderer::new);
-            event.registerEntityRenderer(ModEntities.GRADUATE_BASE.get(), EvilSpiritRenderer::new);
-            event.registerEntityRenderer(ModEntities.ASURA_SPIRIT.get(), EvilSpiritRenderer::new);
-            event.registerEntityRenderer(ModEntities.NURSE_SPIRIT.get(), EvilSpiritRenderer::new);
-            event.registerEntityRenderer(ModEntities.HEAD_SPIRIT.get(), EvilSpiritRenderer::new);
-            event.registerEntityRenderer(ModEntities.SHADOW_CHILD.get(), EvilSpiritRenderer::new);
-            event.registerEntityRenderer(ModEntities.OIRAN_SPIRIT.get(), EvilSpiritRenderer::new);
+            event.registerEntityRenderer(ModEntities.EVIL_SPIRIT.get(), ctx -> new com.yourname.darkgathering.client.renderer.GenericSpiritRenderer<>(ctx, "evil_spirit"));
+            event.registerEntityRenderer(ModEntities.GRADUATE_BASE.get(), ctx -> new com.yourname.darkgathering.client.renderer.GenericSpiritRenderer<>(ctx, "evil_spirit"));
+            event.registerEntityRenderer(ModEntities.ASURA_SPIRIT.get(), ctx -> new com.yourname.darkgathering.client.renderer.GenericSpiritRenderer<>(ctx, "asura_spirit"));
+            event.registerEntityRenderer(ModEntities.NURSE_SPIRIT.get(), ctx -> new com.yourname.darkgathering.client.renderer.GenericSpiritRenderer<>(ctx, "nurse_spirit"));
+            event.registerEntityRenderer(ModEntities.HEAD_SPIRIT.get(), ctx -> new com.yourname.darkgathering.client.renderer.GenericSpiritRenderer<>(ctx, "head_spirit"));
+            event.registerEntityRenderer(ModEntities.SHADOW_CHILD.get(), ctx -> new com.yourname.darkgathering.client.renderer.GenericSpiritRenderer<>(ctx, "shadow_child"));
+            event.registerEntityRenderer(ModEntities.OIRAN_SPIRIT.get(), ctx -> new com.yourname.darkgathering.client.renderer.GenericSpiritRenderer<>(ctx, "oiran_spirit"));
             event.registerEntityRenderer(ModEntities.SUMMON_RITUAL.get(), NoopRenderer::new);
         }
 
