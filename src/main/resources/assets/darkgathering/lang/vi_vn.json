@@ -1,0 +1,18 @@
+{
+    "item.darkgathering.dark_gathering_book": "Sách Dark Gathering",
+    "itemGroup.darkgathering_tab": "Dark Gathering Mod",
+    "key.darkgathering.category": "Dark Gathering",
+    "key.darkgathering.toggle_skill_hotbar": "Chuyển Đổi Thanh Skill (ALT)",
+    "gui.darkgathering.class_selection.title": "Lựa Chọn Lớp Nhân Vật",
+    "gui.darkgathering.class_selection.onmyoji": "Âm Dương Sư",
+    "gui.darkgathering.class_selection.evil_spirit": "Ác Linh",
+    "gui.darkgathering.class_selection.decline": "Bỏ Qua / Chơi Bình Thường",
+    "gui.darkgathering.book_skills.title": "Sách Kỹ Năng Ác Linh",
+    "entity.darkgathering.evil_spirit": "Ác Linh",
+    "message.darkgathering.class_selected_onmyoji": "Bạn đã chọn con đường Âm Dương Sư!",
+    "message.darkgathering.class_selected_evil_spirit": "Bạn đã chọn con đường Ác Linh!",
+    "message.darkgathering.class_selected_none": "Bạn đã chọn chế độ chơi bình thường.",
+    "message.darkgathering.not_enough_mana": "Không đủ Mana!",
+    "message.darkgathering.skill_cooldown": "Kỹ năng đang trong thời gian hồi (%s giây)!",
+    "command.darkgathering.maxmana.success": "Đã đặt max mana cho %s thành %s"
+}

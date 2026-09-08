@@ -1,0 +1,18 @@
+{
+    "item.darkgathering.dark_gathering_book": "Dark Gathering Book",
+    "itemGroup.darkgathering_tab": "Dark Gathering Mod",
+    "key.darkgathering.category": "Dark Gathering",
+    "key.darkgathering.toggle_skill_hotbar": "Toggle Skill Hotbar (ALT)",
+    "gui.darkgathering.class_selection.title": "Choose Your Path",
+    "gui.darkgathering.class_selection.onmyoji": "Âm Dương Sư (Onmyoji)",
+    "gui.darkgathering.class_selection.evil_spirit": "Ác Linh (Evil Spirit)",
+    "gui.darkgathering.class_selection.decline": "Skip / Vanilla Mode",
+    "gui.darkgathering.book_skills.title": "Grimoire of Spirits",
+    "entity.darkgathering.evil_spirit": "Ác Linh (Evil Spirit)",
+    "message.darkgathering.class_selected_onmyoji": "You have unlocked the path of Âm Dương Sư!",
+    "message.darkgathering.class_selected_evil_spirit": "You have unlocked the path of Ác Linh!",
+    "message.darkgathering.class_selected_none": "You have chosen standard Survival mode.",
+    "message.darkgathering.not_enough_mana": "Not enough Mana!",
+    "message.darkgathering.skill_cooldown": "Skill is on cooldown (%s s)!",
+    "command.darkgathering.maxmana.success": "Set max mana for %s to %s"
+}
