@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " W ",
+    "SFL",
+    " W "
+  ],
+  "key": {
+    "W": { "item": "minecraft:white_wool" },
+    "S": { "item": "minecraft:string" },
+    "F": { "item": "minecraft:feather" },
+    "L": { "item": "minecraft:leather" }
+  },
+  "result": {
+    "item": "darkgathering:plush_doll_bear",
+    "count": 1
+  }
+}

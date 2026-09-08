@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "darkgathering:broken_doll" },
+    { "item": "darkgathering:sewing_needle" },
+    { "item": "minecraft:string" }
+  ],
+  "result": {
+    "item": "darkgathering:plush_doll_bear",
+    "count": 1
+  }
+}
