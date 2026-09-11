@@ -3,5 +3,5 @@
     "top": "backrooms:block/yellow_wood_door_upper",
     "bottom": "backrooms:block/yellow_wood_door_lower"
   },
-  "parent": "minecraft:block/door_top"
+  "parent": "minecraft:block/door_top_rh"
 }

@@ -1,7 +1,7 @@
 {
-  "parent": "minecraft:block/door_top",
   "textures": {
-    "bottom": "backrooms:block/vent_metal_door_lower",
-    "top": "backrooms:block/vent_metal_door_upper"
-  }
+    "top": "backrooms:block/vent_metal_door_upper",
+    "bottom": "backrooms:block/vent_metal_door_lower"
+  },
+  "parent": "minecraft:block/door_top"
 }

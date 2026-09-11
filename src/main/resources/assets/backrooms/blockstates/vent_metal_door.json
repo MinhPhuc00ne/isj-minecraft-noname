@@ -1,10 +1,128 @@
 {
   "variants": {
-    "half=upper": {
+    "facing=south,half=lower,hinge=left,open=false": {
+      "y": 90,
+      "model": "backrooms:block/vent_metal_door_bottom"
+    },
+    "facing=west,half=upper,hinge=right,open=true": {
+      "y": 90,
       "model": "backrooms:block/vent_metal_door_top"
     },
-    "half=lower": {
+    "facing=west,half=upper,hinge=right,open=false": {
+      "y": 180,
+      "model": "backrooms:block/vent_metal_door_top_rh"
+    },
+    "facing=west,half=upper,hinge=left,open=true": {
+      "y": 270,
+      "model": "backrooms:block/vent_metal_door_top_rh"
+    },
+    "facing=north,half=lower,hinge=left,open=false": {
+      "y": 270,
       "model": "backrooms:block/vent_metal_door_bottom"
+    },
+    "facing=south,half=upper,hinge=left,open=true": {
+      "y": 180,
+      "model": "backrooms:block/vent_metal_door_top_rh"
+    },
+    "facing=south,half=lower,hinge=right,open=true": {
+      "y": 0,
+      "model": "backrooms:block/vent_metal_door_bottom"
+    },
+    "facing=west,half=lower,hinge=right,open=false": {
+      "y": 180,
+      "model": "backrooms:block/vent_metal_door_bottom_rh"
+    },
+    "facing=south,half=lower,hinge=right,open=false": {
+      "y": 90,
+      "model": "backrooms:block/vent_metal_door_bottom_rh"
+    },
+    "facing=west,half=lower,hinge=left,open=false": {
+      "y": 180,
+      "model": "backrooms:block/vent_metal_door_bottom"
+    },
+    "facing=east,half=lower,hinge=right,open=true": {
+      "y": 270,
+      "model": "backrooms:block/vent_metal_door_bottom"
+    },
+    "facing=north,half=upper,hinge=left,open=true": {
+      "y": 0,
+      "model": "backrooms:block/vent_metal_door_top_rh"
+    },
+    "facing=north,half=lower,hinge=right,open=true": {
+      "y": 180,
+      "model": "backrooms:block/vent_metal_door_bottom"
+    },
+    "facing=west,half=lower,hinge=left,open=true": {
+      "y": 270,
+      "model": "backrooms:block/vent_metal_door_bottom_rh"
+    },
+    "facing=north,half=lower,hinge=left,open=true": {
+      "y": 0,
+      "model": "backrooms:block/vent_metal_door_bottom_rh"
+    },
+    "facing=south,half=upper,hinge=left,open=false": {
+      "y": 90,
+      "model": "backrooms:block/vent_metal_door_top"
+    },
+    "facing=south,half=upper,hinge=right,open=false": {
+      "y": 90,
+      "model": "backrooms:block/vent_metal_door_top_rh"
+    },
+    "facing=north,half=lower,hinge=right,open=false": {
+      "y": 270,
+      "model": "backrooms:block/vent_metal_door_bottom_rh"
+    },
+    "facing=east,half=upper,hinge=right,open=false": {
+      "model": "backrooms:block/vent_metal_door_top_rh"
+    },
+    "facing=west,half=lower,hinge=right,open=true": {
+      "y": 90,
+      "model": "backrooms:block/vent_metal_door_bottom"
+    },
+    "facing=east,half=upper,hinge=left,open=false": {
+      "model": "backrooms:block/vent_metal_door_top"
+    },
+    "facing=north,half=upper,hinge=right,open=true": {
+      "y": 180,
+      "model": "backrooms:block/vent_metal_door_top"
+    },
+    "facing=south,half=upper,hinge=right,open=true": {
+      "y": 0,
+      "model": "backrooms:block/vent_metal_door_top"
+    },
+    "facing=east,half=lower,hinge=right,open=false": {
+      "model": "backrooms:block/vent_metal_door_bottom_rh"
+    },
+    "facing=north,half=upper,hinge=left,open=false": {
+      "y": 270,
+      "model": "backrooms:block/vent_metal_door_top"
+    },
+    "facing=west,half=upper,hinge=left,open=false": {
+      "y": 180,
+      "model": "backrooms:block/vent_metal_door_top"
+    },
+    "facing=east,half=upper,hinge=right,open=true": {
+      "y": 270,
+      "model": "backrooms:block/vent_metal_door_top"
+    },
+    "facing=east,half=upper,hinge=left,open=true": {
+      "y": 90,
+      "model": "backrooms:block/vent_metal_door_top_rh"
+    },
+    "facing=east,half=lower,hinge=left,open=false": {
+      "model": "backrooms:block/vent_metal_door_bottom"
+    },
+    "facing=east,half=lower,hinge=left,open=true": {
+      "y": 90,
+      "model": "backrooms:block/vent_metal_door_bottom_rh"
+    },
+    "facing=north,half=upper,hinge=right,open=false": {
+      "y": 270,
+      "model": "backrooms:block/vent_metal_door_top_rh"
+    },
+    "facing=south,half=lower,hinge=left,open=true": {
+      "y": 180,
+      "model": "backrooms:block/vent_metal_door_bottom_rh"
     }
   }
 }

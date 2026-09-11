@@ -3,5 +3,5 @@
     "top": "backrooms:block/mossy_forest_door_upper",
     "bottom": "backrooms:block/mossy_forest_door_lower"
   },
-  "parent": "minecraft:block/door_bottom"
+  "parent": "minecraft:block/door_bottom_rh"
 }

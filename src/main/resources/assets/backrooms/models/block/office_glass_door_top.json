@@ -1,7 +1,7 @@
 {
-  "parent": "minecraft:block/door_top",
   "textures": {
-    "bottom": "backrooms:block/office_glass_door_lower",
-    "top": "backrooms:block/office_glass_door_upper"
-  }
+    "top": "backrooms:block/office_glass_door_upper",
+    "bottom": "backrooms:block/office_glass_door_lower"
+  },
+  "parent": "minecraft:block/door_top"
 }

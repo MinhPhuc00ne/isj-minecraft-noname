@@ -3,5 +3,5 @@
     "top": "backrooms:block/vent_metal_door_upper",
     "bottom": "backrooms:block/vent_metal_door_lower"
   },
-  "parent": "minecraft:block/door_bottom"
+  "parent": "minecraft:block/door_bottom_rh"
 }

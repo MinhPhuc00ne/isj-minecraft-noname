@@ -3,5 +3,5 @@
     "top": "backrooms:block/office_glass_door_upper",
     "bottom": "backrooms:block/office_glass_door_lower"
   },
-  "parent": "minecraft:block/door_bottom"
+  "parent": "minecraft:block/door_top_rh"
 }
