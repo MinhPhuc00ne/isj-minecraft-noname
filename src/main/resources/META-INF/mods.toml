@@ -3,22 +3,23 @@ loaderVersion="[47,)"
 license="MIT"
 
 [[mods]]
-modId="darkgathering"
+modId="backrooms"
 version="1.0.0"
-displayName="Dark Gathering"
+displayName="The Backrooms Mod"
 authors="MinhPhuc00ne"
 description='''
-Dark Gathering Mod inspired by the manga/anime series.
+Mod The Backrooms cho Minecraft 1.20.1 Forge.
+Kham pha chieu khong gian Level 0, tuong giay vang, den huynh quang vo ve va sinh ton bang Nuoc Hanh Nhan!
 '''
 
-[[dependencies.darkgathering]]
+[[dependencies.backrooms]]
     modId="forge"
     mandatory=true
     versionRange="[47,)"
     ordering="NONE"
     side="BOTH"
 
-[[dependencies.darkgathering]]
+[[dependencies.backrooms]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.20.1, 1.21)"
