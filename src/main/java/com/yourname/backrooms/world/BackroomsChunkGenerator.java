@@ -10,6 +10,7 @@ import net.minecraft.world.level.NoiseColumn;
 import net.minecraft.world.level.StructureManager;
 import net.minecraft.world.level.biome.BiomeManager;
 import net.minecraft.world.level.biome.BiomeSource;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -234,25 +235,30 @@ public class BackroomsChunkGenerator extends ChunkGenerator {
                 int modX = Math.floorMod(worldX, 7);
                 int modZ = Math.floorMod(worldZ, 7);
 
-                if (modX == 0 && modZ == 2) {
+                if (modX == 0 && (modZ == 2 || modZ == 3)) {
                     int cellX = Math.floorDiv(worldX, 7);
                     int cellZ = Math.floorDiv(worldZ, 7);
                     long hash = Math.abs((cellX * 17L) ^ (cellZ * 31L));
 
                     if (hash % 3 == 0) {
-                        BlockState doorLower = ModBlocks.YELLOW_WOOD_DOOR.get().defaultBlockState().setValue(DoorBlock.HALF, DoubleBlockHalf.LOWER);
-                        BlockState doorUpper = ModBlocks.YELLOW_WOOD_DOOR.get().defaultBlockState().setValue(DoorBlock.HALF, DoubleBlockHalf.UPPER);
+                        Block doorBlock = ModBlocks.YELLOW_WOOD_DOOR.get();
+                        if (hash % 4 == 0) doorBlock = ModBlocks.OFFICE_GLASS_DOOR.get();
+                        else if (hash % 4 == 1) doorBlock = ModBlocks.VENT_METAL_DOOR.get();
+                        else if (hash % 4 == 2) doorBlock = ModBlocks.MOSSY_FOREST_DOOR.get();
 
-                        if (hash % 4 == 0) {
-                            doorLower = ModBlocks.OFFICE_GLASS_DOOR.get().defaultBlockState().setValue(DoorBlock.HALF, DoubleBlockHalf.LOWER);
-                            doorUpper = ModBlocks.OFFICE_GLASS_DOOR.get().defaultBlockState().setValue(DoorBlock.HALF, DoubleBlockHalf.UPPER);
-                        } else if (hash % 4 == 1) {
-                            doorLower = ModBlocks.VENT_METAL_DOOR.get().defaultBlockState().setValue(DoorBlock.HALF, DoubleBlockHalf.LOWER);
-                            doorUpper = ModBlocks.VENT_METAL_DOOR.get().defaultBlockState().setValue(DoorBlock.HALF, DoubleBlockHalf.UPPER);
-                        } else if (hash % 4 == 2) {
-                            doorLower = ModBlocks.MOSSY_FOREST_DOOR.get().defaultBlockState().setValue(DoorBlock.HALF, DoubleBlockHalf.LOWER);
-                            doorUpper = ModBlocks.MOSSY_FOREST_DOOR.get().defaultBlockState().setValue(DoorBlock.HALF, DoubleBlockHalf.UPPER);
-                        }
+                        net.minecraft.world.level.block.state.properties.DoorHingeSide hinge =
+                                (modZ == 2) ? net.minecraft.world.level.block.state.properties.DoorHingeSide.LEFT :
+                                        net.minecraft.world.level.block.state.properties.DoorHingeSide.RIGHT;
+
+                        BlockState doorLower = doorBlock.defaultBlockState()
+                                .setValue(DoorBlock.HALF, DoubleBlockHalf.LOWER)
+                                .setValue(DoorBlock.FACING, net.minecraft.core.Direction.EAST)
+                                .setValue(DoorBlock.HINGE, hinge);
+
+                        BlockState doorUpper = doorBlock.defaultBlockState()
+                                .setValue(DoorBlock.HALF, DoubleBlockHalf.UPPER)
+                                .setValue(DoorBlock.FACING, net.minecraft.core.Direction.EAST)
+                                .setValue(DoorBlock.HINGE, hinge);
 
                         chunk.setBlockState(pos.set(x, 65, z), doorLower, false);
                         chunk.setBlockState(pos.set(x, 66, z), doorUpper, false);

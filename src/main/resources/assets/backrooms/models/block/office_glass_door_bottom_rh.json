@@ -1,7 +1,78 @@
 {
+  "elements": [
+    {
+      "to": [
+        16,
+        16,
+        16
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            16,
+            0,
+            13,
+            16
+          ],
+          "texture": "#texture"
+        },
+        "down": {
+          "texture": "#texture",
+          "cullface": "down",
+          "uv": [
+            13,
+            0,
+            16,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            16,
+            0,
+            0,
+            16
+          ],
+          "texture": "#texture"
+        },
+        "south": {
+          "uv": [
+            13,
+            0,
+            16,
+            16
+          ],
+          "texture": "#texture"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#texture"
+        },
+        "up": {
+          "uv": [
+            13,
+            0,
+            16,
+            16
+          ],
+          "texture": "#texture"
+        }
+      },
+      "from": [
+        13,
+        0,
+        0
+      ]
+    }
+  ],
+  "parent": "minecraft:block/block",
   "textures": {
-    "top": "backrooms:block/office_glass_door_upper",
-    "bottom": "backrooms:block/office_glass_door_lower"
-  },
-  "parent": "minecraft:block/door_bottom_rh"
+    "texture": "backrooms:block/office_glass_door_lower",
+    "particle": "backrooms:block/office_glass_door_lower"
+  }
 }
