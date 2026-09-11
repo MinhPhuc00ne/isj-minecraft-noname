@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "result": {
+    "item": "backrooms:backrooms_igniter",
+    "count": 1
+  },
+  "pattern": [
+    " I ",
+    " F ",
+    " W "
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:flint"
+    },
+    "F": {
+      "item": "minecraft:iron_ingot"
+    },
+    "W": {
+      "item": "backrooms:yellow_wallpaper"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "textures": {
+    "all": "backrooms:block/moist_carpet"
+  },
+  "parent": "minecraft:block/cube_all"
+}

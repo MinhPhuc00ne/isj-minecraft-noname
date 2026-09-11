@@ -1,0 +1,14 @@
+{
+  "fluorescent_hum": {
+    "sounds": [
+      "minecraft:ambient/cave/cave1"
+    ],
+    "subtitle": "subtitles.backrooms.fluorescent_hum"
+  },
+  "portal_travel": {
+    "sounds": [
+      "minecraft:block/portal/travel"
+    ],
+    "subtitle": "subtitles.backrooms.portal_travel"
+  }
+}

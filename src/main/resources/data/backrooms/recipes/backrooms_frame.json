@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "result": {
+    "item": "backrooms:backrooms_frame",
+    "count": 8
+  },
+  "pattern": [
+    "FFF",
+    "FWF",
+    "FFF"
+  ],
+  "key": {
+    "F": {
+      "item": "minecraft:iron_ingot"
+    },
+    "W": {
+      "item": "backrooms:yellow_wallpaper"
+    }
+  }
+}

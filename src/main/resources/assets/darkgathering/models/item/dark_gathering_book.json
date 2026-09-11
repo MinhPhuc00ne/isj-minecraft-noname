@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "darkgathering:item/dark_gathering_book"
-  }
-}
