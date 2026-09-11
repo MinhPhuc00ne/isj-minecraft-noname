@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "backrooms:block/mossy_forest_door_top"
+    },
+    "half=lower": {
+      "model": "backrooms:block/mossy_forest_door_bottom"
+    }
+  }
+}

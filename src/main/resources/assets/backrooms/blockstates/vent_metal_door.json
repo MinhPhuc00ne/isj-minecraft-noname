@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "backrooms:block/vent_metal_door_top"
+    },
+    "half=lower": {
+      "model": "backrooms:block/vent_metal_door_bottom"
+    }
+  }
+}

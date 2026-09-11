@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom",
+  "textures": {
+    "bottom": "backrooms:block/mossy_forest_door_lower",
+    "top": "backrooms:block/mossy_forest_door_upper"
+  }
+}

@@ -3,10 +3,15 @@ package com.yourname.backrooms.block;
 import com.yourname.backrooms.BackroomsMod;
 import com.yourname.backrooms.item.ModItems;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.DoubleHighBlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.ChestBlock;
+import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -39,9 +44,44 @@ public class ModBlocks {
     public static final RegistryObject<Block> BACKROOMS_PORTAL = BLOCKS.register("backrooms_portal",
             BackroomsPortalBlock::new);
 
+    // New Expansion Blocks & Traps
+    public static final RegistryObject<Block> GHOST_MOIST_CARPET = registerBlock("ghost_moist_carpet",
+            GhostCarpetBlock::new);
+
+    public static final RegistryObject<Block> FLICKERING_LIGHT = registerBlock("flickering_light",
+            FlickeringLightBlock::new);
+
+    public static final RegistryObject<Block> MOSSY_WALLPAPER = registerBlock("mossy_wallpaper",
+            () -> new Block(BlockBehaviour.Properties.of().strength(2.0F, 6.0F).sound(SoundType.WOOD)));
+
+    public static final RegistryObject<Block> DARK_MOIST_EARTH = registerBlock("dark_moist_earth",
+            () -> new Block(BlockBehaviour.Properties.of().strength(1.0F).sound(SoundType.GRAVEL)));
+
+    public static final RegistryObject<Block> CASSETTE_PLAYER = registerBlock("cassette_player",
+            CassettePlayerBlock::new);
+
+    // 4 Doors
+    public static final RegistryObject<Block> YELLOW_WOOD_DOOR = registerDoorBlock("yellow_wood_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.of().strength(3.0F).sound(SoundType.WOOD).noOcclusion(), BlockSetType.OAK));
+
+    public static final RegistryObject<Block> OFFICE_GLASS_DOOR = registerDoorBlock("office_glass_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.of().strength(2.0F).sound(SoundType.GLASS).noOcclusion(), BlockSetType.OAK));
+
+    public static final RegistryObject<Block> VENT_METAL_DOOR = registerDoorBlock("vent_metal_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.of().strength(5.0F).sound(SoundType.METAL).noOcclusion(), BlockSetType.IRON));
+
+    public static final RegistryObject<Block> MOSSY_FOREST_DOOR = registerDoorBlock("mossy_forest_door",
+            () -> new DoorBlock(BlockBehaviour.Properties.of().strength(3.0F).sound(SoundType.WOOD).noOcclusion(), BlockSetType.OAK));
+
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
+        return toReturn;
+    }
+
+    private static <T extends Block> RegistryObject<T> registerDoorBlock(String name, Supplier<T> block) {
+        RegistryObject<T> toReturn = BLOCKS.register(name, block);
+        ModItems.ITEMS.register(name, () -> new DoubleHighBlockItem(toReturn.get(), new Item.Properties()));
         return toReturn;
     }
 
