@@ -1,0 +1,6 @@
+{
+  "textures": {
+    "all": "backrooms:block/backrooms_frame"
+  },
+  "parent": "minecraft:block/cube_all"
+}
