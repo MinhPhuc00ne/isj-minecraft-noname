@@ -1,0 +1,78 @@
+{
+  "elements": [
+    {
+      "to": [
+        3,
+        16,
+        16
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            3,
+            0,
+            0,
+            16
+          ],
+          "texture": "#texture"
+        },
+        "down": {
+          "texture": "#texture",
+          "cullface": "down",
+          "uv": [
+            0,
+            0,
+            3,
+            16
+          ]
+        },
+        "east": {
+          "uv": [
+            16,
+            0,
+            0,
+            16
+          ],
+          "texture": "#texture"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            3,
+            16
+          ],
+          "texture": "#texture"
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#texture"
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            3,
+            16
+          ],
+          "texture": "#texture"
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "parent": "minecraft:block/block",
+  "textures": {
+    "texture": "backrooms:block/yellow_wood_door_lower",
+    "particle": "backrooms:block/yellow_wood_door_lower"
+  }
+}

@@ -20,13 +20,38 @@ public class ModCreativeTabs {
                     .title(Component.translatable("creativetab.backrooms_tab"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModBlocks.YELLOW_WALLPAPER.get());
+                        pOutput.accept(ModBlocks.MOSSY_WALLPAPER.get());
                         pOutput.accept(ModBlocks.MOIST_CARPET.get());
+                        pOutput.accept(ModBlocks.GHOST_MOIST_CARPET.get());
                         pOutput.accept(ModBlocks.CEILING_TILE.get());
                         pOutput.accept(ModBlocks.WALLPAPER_BASEBOARD.get());
                         pOutput.accept(ModBlocks.BACKROOMS_FRAME.get());
+                        pOutput.accept(ModBlocks.DARK_MOIST_EARTH.get());
                         pOutput.accept(ModBlocks.FLUORESCENT_LIGHT.get());
+                        pOutput.accept(ModBlocks.FLICKERING_LIGHT.get());
+                        pOutput.accept(ModBlocks.CASSETTE_PLAYER.get());
+                        
+                        pOutput.accept(ModBlocks.BUILDING_WINDOW_WALL.get());
+                        pOutput.accept(ModBlocks.COURTYARD_LAWN.get());
+                        pOutput.accept(ModBlocks.COURTYARD_TILE.get());
+                        pOutput.accept(ModBlocks.POOL_TILE.get());
+                        pOutput.accept(ModBlocks.SUBMERGED_PILLAR.get());
+                        pOutput.accept(ModBlocks.BACKROOMS_SIGN.get());
+                        pOutput.accept(ModBlocks.ABANDONED_WOOD_PLANK.get());
+                        
+                        // Doors
+                        pOutput.accept(ModBlocks.YELLOW_WOOD_DOOR.get());
+                        pOutput.accept(ModBlocks.OFFICE_GLASS_DOOR.get());
+                        pOutput.accept(ModBlocks.VENT_METAL_DOOR.get());
+                        pOutput.accept(ModBlocks.MOSSY_FOREST_DOOR.get());
+
+                        // Items
                         pOutput.accept(ModItems.ALMOND_WATER.get());
                         pOutput.accept(ModItems.BACKROOMS_IGNITER.get());
+                        pOutput.accept(ModItems.FLASHLIGHT.get());
+                        pOutput.accept(ModItems.CASSETTE_TAPE_1.get());
+                        pOutput.accept(ModItems.CASSETTE_TAPE_2.get());
+                        pOutput.accept(ModItems.CASSETTE_TAPE_3.get());
                     })
                     .build());
 
