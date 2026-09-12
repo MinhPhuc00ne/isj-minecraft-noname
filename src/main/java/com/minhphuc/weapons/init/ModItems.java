@@ -45,6 +45,12 @@ public class ModItems {
             () -> new Item(new Item.Properties().rarity(Rarity.EPIC)));
 
     // ==========================================
+    // MODULE: WISDOM KING RAPHAEL (TENSURA)
+    // ==========================================
+    public static final RegistryObject<Item> RAPHAEL_BOOK = ITEMS.register("raphael_book",
+            () -> new com.minhphuc.weapons.content.raphael.RaphaelBookItem(new Item.Properties()));
+
+    // ==========================================
     // CREATIVE TAB
     // ==========================================
     public static final RegistryObject<CreativeModeTab> WEAPONS_TAB = CREATIVE_MODE_TABS.register("weapons_tab",
@@ -59,6 +65,7 @@ public class ModItems {
                         output.accept(SOUL_STONE.get());
                         output.accept(TIME_STONE.get());
                         output.accept(MIND_STONE.get());
+                        output.accept(RAPHAEL_BOOK.get());
                     })
                     .build());
 

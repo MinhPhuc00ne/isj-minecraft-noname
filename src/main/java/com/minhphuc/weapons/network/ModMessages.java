@@ -38,6 +38,12 @@ public class ModMessages {
                 .encoder(com.minhphuc.weapons.content.infinitygauntlet.ServerboundCycleRealitySubModePacket::encode)
                 .consumerMainThread(com.minhphuc.weapons.content.infinitygauntlet.ServerboundCycleRealitySubModePacket::handle)
                 .add();
+
+        net.messageBuilder(com.minhphuc.weapons.content.raphael.ClientboundRaphaelHudTriggerPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
+                .decoder(com.minhphuc.weapons.content.raphael.ClientboundRaphaelHudTriggerPacket::new)
+                .encoder(com.minhphuc.weapons.content.raphael.ClientboundRaphaelHudTriggerPacket::encode)
+                .consumerMainThread(com.minhphuc.weapons.content.raphael.ClientboundRaphaelHudTriggerPacket::handle)
+                .add();
     }
 
     public static <MSG> void sendToServer(MSG message) {
