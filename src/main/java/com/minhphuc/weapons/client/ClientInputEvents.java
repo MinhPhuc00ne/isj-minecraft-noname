@@ -34,7 +34,7 @@ public class ClientInputEvents {
 
         if (heldStack.getItem() instanceof com.minhphuc.weapons.content.infinitygauntlet.InfinityGauntletItem) {
             int mainMode = heldStack.hasTag() ? heldStack.getTag().getInt(com.minhphuc.weapons.content.infinitygauntlet.InfinityGauntletItem.NBT_MODE) : 0;
-            if (mainMode == 3) {
+            if (mainMode == 3 || mainMode == 4 || mainMode == 5 || mainMode == 6) {
                 com.minhphuc.weapons.network.ModMessages.sendToServer(new com.minhphuc.weapons.content.infinitygauntlet.ServerboundCycleRealitySubModePacket());
             }
         }

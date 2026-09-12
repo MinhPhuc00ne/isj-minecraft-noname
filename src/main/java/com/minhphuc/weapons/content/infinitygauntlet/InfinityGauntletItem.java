@@ -132,6 +132,30 @@ public class InfinityGauntletItem extends Item {
             return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
         }
 
+        if (mode == 4) {
+            // Soul Stone Mode
+            if (!level.isClientSide() && level instanceof ServerLevel serverLevel && player instanceof ServerPlayer serverPlayer) {
+                SoulStoneAbility.executeSoulStone(serverLevel, serverPlayer, stack);
+            }
+            return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
+        }
+
+        if (mode == 5) {
+            // Time Stone Mode
+            if (!level.isClientSide() && level instanceof ServerLevel serverLevel && player instanceof ServerPlayer serverPlayer) {
+                TimeStoneAbility.executeTimeStone(serverLevel, serverPlayer, stack);
+            }
+            return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
+        }
+
+        if (mode == 6) {
+            // Mind Stone Mode
+            if (!level.isClientSide() && level instanceof ServerLevel serverLevel && player instanceof ServerPlayer serverPlayer) {
+                MindStoneAbility.executeMindStone(serverLevel, serverPlayer, stack);
+            }
+            return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
+        }
+
         if (mode == 7) {
             // SNAP (6 Stones Mode)
             if (!level.isClientSide() && level instanceof ServerLevel serverLevel) {
@@ -244,7 +268,10 @@ public class InfinityGauntletItem extends Item {
         tooltip.add(Component.literal(""));
         tooltip.add(Component.literal("§7- Hướng dẫn: Nhấn phím §e[PgUp] §7để chọn chức năng."));
         tooltip.add(Component.literal("§7- §d🔮 Đá Sức Mạnh (Power Stone)§7: Bắn laze hủy diệt. Nếu bị giam cầm trong không gian kín, chuột phải phát xung năng lượng giải thoát."));
-        tooltip.add(Component.literal("§7- §c🔴 Đá Thực Tại (Reality Stone)§7: Chuột trái đổi 3 chế độ (Normal / Frozen / Life). Nhìn lên trời + Chuột phải đổi thời tiết (Nắng/Mưa/Bão)."));
-        tooltip.add(Component.literal("§7- §6Sức mạnh 6 viên đá (Snap)§7: Chuột phải để búng tay diệt quái. Gõ trực tiếp <mệnh lệnh> trong chat để Gemini AI thực thi!"));
+        tooltip.add(Component.literal("§7- §c🔴 Đá Thực Tại (Reality Stone)§7: Chuột trái đổi 3 chế độ (Normal / Frozen / Life). Nhìn lên trời + Chuột phải đổi thời tiết."));
+        tooltip.add(Component.literal("§7- §6💀 Đá Linh Hồn (Soul Stone)§7: Chuột trái đổi 3 chế độ (Soul Harvest / Soul Puppet / Soul Extraction). Chuột phải kích hoạt."));
+        tooltip.add(Component.literal("§7- §a⌛ Đá Thời Gian (Time Stone)§7: Chuột trái đổi 3 chế độ (Time Rewind / Age Decay / Time Freeze Domain). Chuột phải kích hoạt."));
+        tooltip.add(Component.literal("§7- §e🧠 Đá Tâm Trí (Mind Stone)§7: Chuột trái đổi 3 chế độ (Vương Quyền Chi Phối / Telekinesis / Mind Beam Laser)."));
+        tooltip.add(Component.literal("§7- §6Sức mạnh 6 viên đá (Snap)§7: Chuột phải để búng tay diệt quái. Gõ trực tiếp mệnh lệnh trong chat để Gemini AI thực thi!"));
     }
 }
