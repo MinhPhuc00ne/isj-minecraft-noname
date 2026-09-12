@@ -1,27 +1,27 @@
 modLoader="javafml"
-loaderVersion="[47,)"
-license="MIT"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
 
 [[mods]]
-modId="backrooms"
-version="1.0.0"
-displayName="The Backrooms Mod"
-authors="MinhPhuc00ne"
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+authors="${mod_authors}"
 description='''
-Mod The Backrooms cho Minecraft 1.20.1 Forge.
-Kham pha chieu khong gian Level 0, tuong giay vang, den huynh quang vo ve va sinh ton bang Nuoc Hanh Nhan!
+Mod KÝ TÚC XÁ KHU B (ĐHQG-HCM) cho Minecraft 1.20.1 Forge.
+Bao gom cac khoi bang ten toà nha (A1-A5, B1-B5, C1-C6, D2-D6, E1, F1, F2, G1), logo ĐHQG-HCM, bang chi dan cong va lenh /spawn_ktx sinh khuon vien tu dong.
 '''
 
-[[dependencies.backrooms]]
+[[dependencies.ktxkb]]
     modId="forge"
     mandatory=true
-    versionRange="[47,)"
+    versionRange="${forge_version_range}"
     ordering="NONE"
     side="BOTH"
 
-[[dependencies.backrooms]]
+[[dependencies.ktxkb]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.20.1, 1.21)"
+    versionRange="${minecraft_version_range}"
     ordering="NONE"
     side="BOTH"
