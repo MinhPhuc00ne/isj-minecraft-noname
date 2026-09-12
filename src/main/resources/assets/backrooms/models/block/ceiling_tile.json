@@ -1,6 +1,0 @@
-{
-  "textures": {
-    "all": "backrooms:block/ceiling_tile"
-  },
-  "parent": "minecraft:block/cube_all"
-}

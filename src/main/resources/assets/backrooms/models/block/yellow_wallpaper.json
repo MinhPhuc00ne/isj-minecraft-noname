@@ -1,6 +1,0 @@
-{
-  "textures": {
-    "all": "backrooms:block/yellow_wallpaper"
-  },
-  "parent": "minecraft:block/cube_all"
-}
