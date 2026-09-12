@@ -1,6 +1,0 @@
-{
-  "textures": {
-    "all": "backrooms:block/fluorescent_light"
-  },
-  "parent": "minecraft:block/cube_all"
-}

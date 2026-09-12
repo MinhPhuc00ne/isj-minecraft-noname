@@ -1,6 +1,0 @@
-{
-  "textures": {
-    "layer0": "backrooms:item/almond_water"
-  },
-  "parent": "minecraft:item/generated"
-}

@@ -1,6 +1,0 @@
-{
-  "textures": {
-    "all": "backrooms:block/backrooms_portal"
-  },
-  "parent": "minecraft:block/cube_all"
-}

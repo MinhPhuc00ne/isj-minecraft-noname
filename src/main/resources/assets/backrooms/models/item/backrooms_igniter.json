@@ -1,6 +1,0 @@
-{
-  "textures": {
-    "layer0": "backrooms:item/backrooms_igniter"
-  },
-  "parent": "minecraft:item/generated"
-}
