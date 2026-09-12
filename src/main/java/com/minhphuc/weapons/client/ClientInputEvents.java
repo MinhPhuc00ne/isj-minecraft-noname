@@ -21,4 +21,22 @@ public class ClientInputEvents {
             }
         }
     }
+
+    @SubscribeEvent
+    public static void onLeftClickEmpty(net.minecraftforge.event.entity.player.PlayerInteractEvent.LeftClickEmpty event) {
+        net.minecraft.world.entity.player.Player player = event.getEntity();
+        if (player == null) return;
+
+        net.minecraft.world.item.ItemStack heldStack = player.getMainHandItem();
+        if (!(heldStack.getItem() instanceof com.minhphuc.weapons.content.infinitygauntlet.InfinityGauntletItem)) {
+            heldStack = player.getOffhandItem();
+        }
+
+        if (heldStack.getItem() instanceof com.minhphuc.weapons.content.infinitygauntlet.InfinityGauntletItem) {
+            int mainMode = heldStack.hasTag() ? heldStack.getTag().getInt(com.minhphuc.weapons.content.infinitygauntlet.InfinityGauntletItem.NBT_MODE) : 0;
+            if (mainMode == 3) {
+                com.minhphuc.weapons.network.ModMessages.sendToServer(new com.minhphuc.weapons.content.infinitygauntlet.ServerboundCycleRealitySubModePacket());
+            }
+        }
+    }
 }

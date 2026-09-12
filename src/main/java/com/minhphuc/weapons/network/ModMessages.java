@@ -32,6 +32,12 @@ public class ModMessages {
                 .encoder(ServerboundSelectModePacket::encode)
                 .consumerMainThread(ServerboundSelectModePacket::handle)
                 .add();
+
+        net.messageBuilder(com.minhphuc.weapons.content.infinitygauntlet.ServerboundCycleRealitySubModePacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
+                .decoder(com.minhphuc.weapons.content.infinitygauntlet.ServerboundCycleRealitySubModePacket::new)
+                .encoder(com.minhphuc.weapons.content.infinitygauntlet.ServerboundCycleRealitySubModePacket::encode)
+                .consumerMainThread(com.minhphuc.weapons.content.infinitygauntlet.ServerboundCycleRealitySubModePacket::handle)
+                .add();
     }
 
     public static <MSG> void sendToServer(MSG message) {
