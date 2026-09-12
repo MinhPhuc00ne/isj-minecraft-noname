@@ -34,7 +34,10 @@ public class WeaponsMod {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        event.enqueueWork(ModMessages::register);
+        event.enqueueWork(() -> {
+            ModMessages.register();
+            com.minhphuc.weapons.config.AIGeminiConfig.loadConfig();
+        });
         LOGGER.info("Weapons Mod initialized successfully!");
     }
 
