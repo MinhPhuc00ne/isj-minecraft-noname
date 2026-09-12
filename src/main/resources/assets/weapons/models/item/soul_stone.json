@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "infinitygauntlet:item/reality_stone"
+    "layer0": "weapons:item/soul_stone"
   }
 }
