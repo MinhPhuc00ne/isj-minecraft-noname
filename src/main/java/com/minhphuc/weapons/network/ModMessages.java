@@ -1,6 +1,7 @@
-package com.minhphuc.infinitygauntlet.network;
+package com.minhphuc.weapons.network;
 
-import com.minhphuc.infinitygauntlet.InfinityGauntletMod;
+import com.minhphuc.weapons.WeaponsMod;
+import com.minhphuc.weapons.content.infinitygauntlet.ServerboundSelectModePacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.network.NetworkDirection;
@@ -18,7 +19,7 @@ public class ModMessages {
 
     public static void register() {
         SimpleChannel net = NetworkRegistry.ChannelBuilder
-                .named(new ResourceLocation(InfinityGauntletMod.MOD_ID, "messages"))
+                .named(new ResourceLocation(WeaponsMod.MOD_ID, "messages"))
                 .networkProtocolVersion(() -> "1.0")
                 .clientAcceptedVersions(s -> true)
                 .serverAcceptedVersions(s -> true)

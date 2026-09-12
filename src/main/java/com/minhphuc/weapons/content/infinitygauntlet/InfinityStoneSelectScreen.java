@@ -1,7 +1,6 @@
-package com.minhphuc.infinitygauntlet.client.gui;
+package com.minhphuc.weapons.content.infinitygauntlet;
 
-import com.minhphuc.infinitygauntlet.network.ModMessages;
-import com.minhphuc.infinitygauntlet.network.ServerboundSelectModePacket;
+import com.minhphuc.weapons.network.ModMessages;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;

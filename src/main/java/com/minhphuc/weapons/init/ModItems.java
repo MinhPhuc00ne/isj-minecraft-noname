@@ -1,6 +1,7 @@
-package com.minhphuc.infinitygauntlet.item;
+package com.minhphuc.weapons.init;
 
-import com.minhphuc.infinitygauntlet.InfinityGauntletMod;
+import com.minhphuc.weapons.WeaponsMod;
+import com.minhphuc.weapons.content.infinitygauntlet.InfinityGauntletItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -14,16 +15,17 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
-            DeferredRegister.create(ForgeRegistries.ITEMS, InfinityGauntletMod.MOD_ID);
+            DeferredRegister.create(ForgeRegistries.ITEMS, WeaponsMod.MOD_ID);
 
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
-            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, InfinityGauntletMod.MOD_ID);
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, WeaponsMod.MOD_ID);
 
-    // Infinity Gauntlet Weapon
+    // ==========================================
+    // MODULE: INFINITY GAUNTLET & STONES
+    // ==========================================
     public static final RegistryObject<Item> INFINITY_GAUNTLET = ITEMS.register("infinity_gauntlet",
             () -> new InfinityGauntletItem(new Item.Properties()));
 
-    // Infinity Stones
     public static final RegistryObject<Item> POWER_STONE = ITEMS.register("power_stone",
             () -> new Item(new Item.Properties().rarity(Rarity.EPIC)));
 
@@ -42,10 +44,12 @@ public class ModItems {
     public static final RegistryObject<Item> MIND_STONE = ITEMS.register("mind_stone",
             () -> new Item(new Item.Properties().rarity(Rarity.EPIC)));
 
-    // Creative Tab
-    public static final RegistryObject<CreativeModeTab> INFINITY_TAB = CREATIVE_MODE_TABS.register("infinity_tab",
+    // ==========================================
+    // CREATIVE TAB
+    // ==========================================
+    public static final RegistryObject<CreativeModeTab> WEAPONS_TAB = CREATIVE_MODE_TABS.register("weapons_tab",
             () -> CreativeModeTab.builder()
-                    .title(Component.literal("§6§lGăng Tay Vô Cực"))
+                    .title(Component.literal("§6§lVũ Khí & Găng Tay Vô Cực"))
                     .icon(() -> new ItemStack(INFINITY_GAUNTLET.get()))
                     .displayItems((parameters, output) -> {
                         output.accept(INFINITY_GAUNTLET.get());

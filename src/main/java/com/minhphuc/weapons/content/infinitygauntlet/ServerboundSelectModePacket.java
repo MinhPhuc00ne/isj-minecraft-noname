@@ -1,6 +1,5 @@
-package com.minhphuc.infinitygauntlet.network;
+package com.minhphuc.weapons.content.infinitygauntlet;
 
-import com.minhphuc.infinitygauntlet.item.InfinityGauntletItem;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;

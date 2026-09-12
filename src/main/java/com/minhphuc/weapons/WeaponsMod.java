@@ -1,8 +1,8 @@
-package com.minhphuc.infinitygauntlet;
+package com.minhphuc.weapons;
 
-import com.minhphuc.infinitygauntlet.client.ModKeyBindings;
-import com.minhphuc.infinitygauntlet.item.ModItems;
-import com.minhphuc.infinitygauntlet.network.ModMessages;
+import com.minhphuc.weapons.init.ModItems;
+import com.minhphuc.weapons.init.ModKeyBindings;
+import com.minhphuc.weapons.network.ModMessages;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
@@ -15,34 +15,34 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
-@Mod(InfinityGauntletMod.MOD_ID)
-public class InfinityGauntletMod {
-    public static final String MOD_ID = "infinitygauntlet";
+@Mod(WeaponsMod.MOD_ID)
+public class WeaponsMod {
+    public static final String MOD_ID = "weapons";
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public InfinityGauntletMod() {
+    public WeaponsMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        // Register item & creative tab deferred registers
+        // Đăng ký Items và Creative Tabs
         ModItems.register(modEventBus);
 
-        // Register lifecycle events
+        // Lifecycle events
         modEventBus.addListener(this::commonSetup);
 
-        // Register mod bus to Forge event bus
+        // Đăng ký Forge Event Bus
         MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(ModMessages::register);
-        LOGGER.info("Infinity Gauntlet Mod initialized successfully!");
+        LOGGER.info("Weapons Mod initialized successfully!");
     }
 
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            LOGGER.info("Infinity Gauntlet Client Setup complete!");
+            LOGGER.info("Weapons Mod Client Setup complete!");
         }
 
         @SubscribeEvent
