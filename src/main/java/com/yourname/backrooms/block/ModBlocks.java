@@ -60,6 +60,28 @@ public class ModBlocks {
     public static final RegistryObject<Block> CASSETTE_PLAYER = registerBlock("cassette_player",
             CassettePlayerBlock::new);
 
+    // Hotel Courtyard & Ocean Poolroom Blocks
+    public static final RegistryObject<Block> BUILDING_WINDOW_WALL = registerBlock("building_window_wall",
+            () -> new Block(BlockBehaviour.Properties.of().strength(3.0F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> COURTYARD_LAWN = registerBlock("courtyard_lawn",
+            () -> new Block(BlockBehaviour.Properties.of().strength(0.6F).sound(SoundType.GRASS)));
+
+    public static final RegistryObject<Block> COURTYARD_TILE = registerBlock("courtyard_tile",
+            () -> new Block(BlockBehaviour.Properties.of().strength(2.0F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> POOL_TILE = registerBlock("pool_tile",
+            () -> new Block(BlockBehaviour.Properties.of().strength(2.0F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> SUBMERGED_PILLAR = registerBlock("submerged_pillar",
+            () -> new Block(BlockBehaviour.Properties.of().strength(3.0F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> BACKROOMS_SIGN = registerBlock("backrooms_sign",
+            () -> new Block(BlockBehaviour.Properties.of().strength(1.5F).sound(SoundType.WOOD)));
+
+    public static final RegistryObject<Block> ABANDONED_WOOD_PLANK = registerBlock("abandoned_wood_plank",
+            () -> new Block(BlockBehaviour.Properties.of().strength(2.0F).sound(SoundType.WOOD)));
+
     // 4 Doors
     public static final RegistryObject<Block> YELLOW_WOOD_DOOR = registerDoorBlock("yellow_wood_door",
             () -> new DoorBlock(BlockBehaviour.Properties.of().strength(3.0F).sound(SoundType.WOOD).noOcclusion(), BlockSetType.OAK));

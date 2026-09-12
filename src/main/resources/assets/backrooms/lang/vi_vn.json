@@ -21,5 +21,12 @@
   "block.backrooms.office_glass_door": "Cửa Kính Văn Phòng",
   "block.backrooms.ceiling_tile": "Khối Trần Nhà Văn Phòng",
   "block.backrooms.yellow_wallpaper": "Khối Tường Giấy Vàng",
-  "block.backrooms.backrooms_frame": "Khối Khung Cổng Backrooms"
+  "block.backrooms.backrooms_frame": "Khối Khung Cổng Backrooms",
+  "block.backrooms.building_window_wall": "Tường Tòa Nhà Cửa Sổ (Courtyard)",
+  "block.backrooms.courtyard_lawn": "Thảm Cỏ Sân Chơi",
+  "block.backrooms.courtyard_tile": "Gạch Lát Lối Đi Sân Chơi",
+  "block.backrooms.pool_tile": "Gạch Hồ Bơi Đại Dương",
+  "block.backrooms.submerged_pillar": "Cột Đá Chìm Đại Dương",
+  "block.backrooms.backrooms_sign": "Biển Cảnh Báo Backrooms",
+  "block.backrooms.abandoned_wood_plank": "Gỗ Mục Nhà Dân Làng Bỏ Hoang"
 }

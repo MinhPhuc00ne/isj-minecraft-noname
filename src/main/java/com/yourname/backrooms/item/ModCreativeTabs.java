@@ -31,6 +31,14 @@ public class ModCreativeTabs {
                         pOutput.accept(ModBlocks.FLICKERING_LIGHT.get());
                         pOutput.accept(ModBlocks.CASSETTE_PLAYER.get());
                         
+                        pOutput.accept(ModBlocks.BUILDING_WINDOW_WALL.get());
+                        pOutput.accept(ModBlocks.COURTYARD_LAWN.get());
+                        pOutput.accept(ModBlocks.COURTYARD_TILE.get());
+                        pOutput.accept(ModBlocks.POOL_TILE.get());
+                        pOutput.accept(ModBlocks.SUBMERGED_PILLAR.get());
+                        pOutput.accept(ModBlocks.BACKROOMS_SIGN.get());
+                        pOutput.accept(ModBlocks.ABANDONED_WOOD_PLANK.get());
+                        
                         // Doors
                         pOutput.accept(ModBlocks.YELLOW_WOOD_DOOR.get());
                         pOutput.accept(ModBlocks.OFFICE_GLASS_DOOR.get());

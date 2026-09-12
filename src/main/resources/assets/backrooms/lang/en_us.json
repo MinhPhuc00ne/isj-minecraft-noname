@@ -21,5 +21,12 @@
   "block.backrooms.office_glass_door": "Office Frosted Glass Door",
   "block.backrooms.ceiling_tile": "Ceiling Tile Block",
   "block.backrooms.yellow_wallpaper": "Yellow Wallpaper Block",
-  "block.backrooms.backrooms_frame": "Backrooms Portal Frame Block"
+  "block.backrooms.backrooms_frame": "Backrooms Portal Frame Block",
+  "block.backrooms.building_window_wall": "Building Window Wall (Courtyard)",
+  "block.backrooms.courtyard_lawn": "Courtyard Lawn Block",
+  "block.backrooms.courtyard_tile": "Courtyard Pathway Tile",
+  "block.backrooms.pool_tile": "Submerged Ocean Pool Tile",
+  "block.backrooms.submerged_pillar": "Submerged Ocean Pillar",
+  "block.backrooms.backrooms_sign": "Backrooms Warning Sign",
+  "block.backrooms.abandoned_wood_plank": "Abandoned Rotten Wood Plank"
 }
