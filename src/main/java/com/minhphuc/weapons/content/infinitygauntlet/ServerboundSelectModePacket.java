@@ -45,6 +45,14 @@ public class ServerboundSelectModePacket {
                     true
                 );
 
+                if (modeOrdinal == 7) {
+                    player.sendSystemMessage(
+                        Component.literal("§d§l[GĂNG TAY VÔ CỰC - GEMINI AI] §fTrí tuệ 6 viên đá đã kích hoạt!\n" +
+                                "§e💡 Bất kỳ tin nhắn nào bạn gõ trong chat lúc này đều sẽ trở thành mệnh lệnh cho Gemini AI thực thi!\n" +
+                                "§7(Ví dụ: xóa sổ các sinh vật, cho trời mưa, tạo nhà kim cương, triệu hồi 5 rồng ender...)")
+                    );
+                }
+
                 player.level().playSound(
                     null,
                     player.getX(), player.getY(), player.getZ(),

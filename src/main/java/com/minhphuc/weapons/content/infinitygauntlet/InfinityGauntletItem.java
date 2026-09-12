@@ -72,6 +72,23 @@ public class InfinityGauntletItem extends Item {
                 player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, duration, 1, false, false, true));
                 player.addEffect(new MobEffectInstance(MobEffects.SATURATION, duration, 4, false, false, true));
                 player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, duration, 4, false, false, true));
+
+                // Frost Walker: Tự động đóng băng nước dưới chân khi ở Chế độ Frozen của Đá Thực Tại
+                int mode = stack.hasTag() ? stack.getTag().getInt(NBT_MODE) : 0;
+                int subMode = stack.hasTag() ? stack.getTag().getInt("RealitySubMode") : 0;
+                if (mode == 3 && subMode == 1 && player.onGround()) {
+                    net.minecraft.core.BlockPos feet = player.blockPosition();
+                    net.minecraft.core.BlockPos below = feet.below();
+                    for (int x = -2; x <= 2; x++) {
+                        for (int z = -2; z <= 2; z++) {
+                            net.minecraft.core.BlockPos checkPos = below.offset(x, 0, z);
+                            net.minecraft.world.level.block.state.BlockState state = level.getBlockState(checkPos);
+                            if (state.is(net.minecraft.world.level.block.Blocks.WATER)) {
+                                level.setBlock(checkPos, net.minecraft.world.level.block.Blocks.FROSTED_ICE.defaultBlockState(), 3);
+                            }
+                        }
+                    }
+                }
             }
         }
         super.inventoryTick(stack, level, entity, slotId, isSelected);
@@ -103,6 +120,14 @@ public class InfinityGauntletItem extends Item {
             // Power Stone Mode
             if (!level.isClientSide() && level instanceof ServerLevel serverLevel && player instanceof ServerPlayer serverPlayer) {
                 PowerStoneAbility.executePowerStone(serverLevel, serverPlayer, stack);
+            }
+            return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
+        }
+
+        if (mode == 3) {
+            // Reality Stone Mode
+            if (!level.isClientSide() && level instanceof ServerLevel serverLevel && player instanceof ServerPlayer serverPlayer) {
+                RealityStoneAbility.executeRealityStone(serverLevel, serverPlayer, stack);
             }
             return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
         }
@@ -219,6 +244,7 @@ public class InfinityGauntletItem extends Item {
         tooltip.add(Component.literal(""));
         tooltip.add(Component.literal("§7- Hướng dẫn: Nhấn phím §e[PgUp] §7để chọn chức năng."));
         tooltip.add(Component.literal("§7- §d🔮 Đá Sức Mạnh (Power Stone)§7: Bắn laze hủy diệt. Nếu bị giam cầm trong không gian kín, chuột phải phát xung năng lượng giải thoát."));
-        tooltip.add(Component.literal("§7- §6Sức mạnh 6 viên đá (Snap)§7: Chuột phải để tiêu diệt tất cả sinh vật trong 100 blocks!"));
+        tooltip.add(Component.literal("§7- §c🔴 Đá Thực Tại (Reality Stone)§7: Chuột trái đổi 3 chế độ (Normal / Frozen / Life). Nhìn lên trời + Chuột phải đổi thời tiết (Nắng/Mưa/Bão)."));
+        tooltip.add(Component.literal("§7- §6Sức mạnh 6 viên đá (Snap)§7: Chuột phải để búng tay diệt quái. Gõ trực tiếp <mệnh lệnh> trong chat để Gemini AI thực thi!"));
     }
 }
