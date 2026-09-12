@@ -8,18 +8,17 @@ version="${mod_version}"
 displayName="${mod_name}"
 authors="${mod_authors}"
 description='''
-Mod KÝ TÚC XÁ KHU B (ĐHQG-HCM) cho Minecraft 1.20.1 Forge.
-Bao gom cac khoi bang ten toà nha (A1-A5, B1-B5, C1-C6, D2-D6, E1, F1, F2, G1), logo ĐHQG-HCM, bang chi dan cong va lenh /spawn_ktx sinh khuon vien tu dong.
+${mod_description}
 '''
 
-[[dependencies.ktxkb]]
+[[dependencies.infinitygauntlet]]
     modId="forge"
     mandatory=true
     versionRange="${forge_version_range}"
     ordering="NONE"
     side="BOTH"
 
-[[dependencies.ktxkb]]
+[[dependencies.infinitygauntlet]]
     modId="minecraft"
     mandatory=true
     versionRange="${minecraft_version_range}"
