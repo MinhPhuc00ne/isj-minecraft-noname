@@ -1,0 +1,12 @@
+{
+  "item.infinitygauntlet.infinity_gauntlet": "Infinity Gauntlet",
+  "item.infinitygauntlet.power_stone": "Power Stone",
+  "item.infinitygauntlet.space_stone": "Space Stone",
+  "item.infinitygauntlet.reality_stone": "Reality Stone",
+  "item.infinitygauntlet.soul_stone": "Soul Stone",
+  "item.infinitygauntlet.time_stone": "Time Stone",
+  "item.infinitygauntlet.mind_stone": "Mind Stone",
+  "itemGroup.infinitygauntlet.infinity_tab": "Infinity Gauntlet Mod",
+  "key.category.infinitygauntlet": "Infinity Gauntlet Mod",
+  "key.infinitygauntlet.select_stone": "Open Stone Selection Menu (PgUp)"
+}
