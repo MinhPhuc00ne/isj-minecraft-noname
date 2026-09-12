@@ -1,6 +1,6 @@
 # 🤝 Hướng Dẫn Đóng Góp (Contributing Guidelines)
 
-Cảm ơn bạn đã quan tâm đến việc đóng góp phát triển cho Mod **Dark Gathering**!
+Cảm ơn bạn đã quan tâm đến việc đóng góp phát triển cho Mod **Infinity Gauntlet**!
 
 ## 🚀 Các Bước Đóng Góp
 
@@ -12,10 +12,10 @@ Cảm ơn bạn đã quan tâm đến việc đóng góp phát triển cho Mod *
    ```
 3. **Tạo nhánh mới** cho tính năng hoặc sửa lỗi của bạn:
    ```bash
-   git checkout -b feature/awesome-new-skill
+   git checkout -b feature/awesome-new-infinity-ability
    ```
 4. **Viết Code & Kiểm Tra**:
-   - Tuân thủ cấu trúc package `com.yourname.darkgathering.*`.
+   - Tuân thủ cấu trúc package `com.minhphuc.infinitygauntlet.*`.
    - Đảm bảo dự án biên dịch thành công qua Gradle:
      ```bash
      ./gradlew build
@@ -23,8 +23,8 @@ Cảm ơn bạn đã quan tâm đến việc đóng góp phát triển cho Mod *
 5. **Commit & Push**:
    ```bash
    git add .
-   git commit -m "feat: add new spirit skill system"
-   git push origin feature/awesome-new-skill
+   git commit -m "feat: add new infinity stone ability"
+   git push origin feature/awesome-new-infinity-ability
    ```
 6. **Mở Pull Request (PR)**:
    - Truy cập Repository gốc và nhấn **New Pull Request**.
@@ -34,4 +34,4 @@ Cảm ơn bạn đã quan tâm đến việc đóng góp phát triển cho Mod *
 
 ## 🐞 Báo Lỗi & Đề Xuất Tính Năng
 
-Nếu bạn gặp lỗi hoặc có ý tưởng về kỹ năng/thực thể Ác Linh mới, vui lòng mở một issue tại trang [GitHub Issues](https://github.com/MinhPhuc00ne/isj-minecraft-noname/issues).
+Nếu bạn gặp lỗi hoặc có ý tưởng mới về Găng Tay Vô Cực, vui lòng mở một issue tại trang [GitHub Issues](https://github.com/MinhPhuc00ne/isj-minecraft-noname/issues).
