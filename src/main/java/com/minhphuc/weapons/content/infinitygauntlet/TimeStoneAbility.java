@@ -127,10 +127,13 @@ public class TimeStoneAbility {
         List<Mob> mobs = level.getEntitiesOfClass(Mob.class, area, Mob::isAlive);
 
         for (Mob mob : mobs) {
-            mob.setTicksFrozen(400);
+            mob.setDeltaMovement(0, 0, 0);
+            mob.hasImpulse = true;
             mob.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300, -255, false, false, true));
-            mob.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 300, 255, false, false, true));
+            mob.addEffect(new MobEffectInstance(MobEffects.JUMP, 300, -255, false, false, true));
+            mob.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 300, 255, false, false, true));
             level.sendParticles(ParticleTypes.END_ROD, mob.getX(), mob.getY() + 1.0D, mob.getZ(), 10, 0.3D, 0.5D, 0.3D, 0.02D);
+            level.sendParticles(ParticleTypes.HAPPY_VILLAGER, mob.getX(), mob.getY() + 1.0D, mob.getZ(), 5, 0.2D, 0.3D, 0.2D, 0.02D);
         }
 
         // Người chơi nhận tốc độ di chuyển siêu tốc
@@ -149,7 +152,7 @@ public class TimeStoneAbility {
                 SoundEvents.BEACON_POWER_SELECT, SoundSource.PLAYERS, 1.5F, 0.5F);
 
         player.displayClientMessage(
-            Component.literal("§a§l[ĐÁ THỜI GIAN - TIME FREEZE DOMAIN] §fĐã đóng băng dòng thời gian của " + mobs.size() + " quái vật trong 20 blocks! 🛑"),
+            Component.literal("§a§l[ĐÁ THỜI GIAN - TIME FREEZE DOMAIN] §fĐã dừng hoàn toàn chuyển động của " + mobs.size() + " sinh vật trong 20 blocks! 🛑"),
             true
         );
 

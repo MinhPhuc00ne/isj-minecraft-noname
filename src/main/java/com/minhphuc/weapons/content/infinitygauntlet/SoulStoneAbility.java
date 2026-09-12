@@ -25,6 +25,7 @@ public class SoulStoneAbility {
             case 0 -> executeSoulHarvest(level, player, gauntlet);
             case 1 -> executeSoulPuppet(level, player, gauntlet);
             case 2 -> executeSoulExtraction(level, player, gauntlet);
+            case 3 -> executeSoulResurrection(level, player, gauntlet);
         }
     }
 
@@ -144,6 +145,72 @@ public class SoulStoneAbility {
 
         player.displayClientMessage(
             Component.literal("§6§l[ĐÁ LINH HỒN - SOUL EXTRACTION] Đã tách và thiêu rụi linh hồn của " + target.getName().getString() + "! 💥"),
+            true
+        );
+
+        player.getCooldowns().addCooldown(gauntlet.getItem(), 20);
+    }
+
+    /**
+     * Chế độ 4: 🧟 Kỹ Năng: Tử Linh Phục Sinh - Hồi sinh sinh vật từ vật phẩm rớt ra trong 10 blocks
+     */
+    private static void executeSoulResurrection(ServerLevel level, ServerPlayer player, ItemStack gauntlet) {
+        BlockPos center = player.blockPosition();
+        int radius = 10;
+
+        AABB area = new AABB(center).inflate(radius);
+        List<net.minecraft.world.entity.item.ItemEntity> itemEntities = level.getEntitiesOfClass(
+            net.minecraft.world.entity.item.ItemEntity.class,
+            area,
+            e -> e.isAlive()
+        );
+
+        if (itemEntities.isEmpty()) {
+            player.displayClientMessage(
+                Component.literal("§6[ĐÁ LINH HỒN - TỬ LINH PHỤC SINH] Không tìm thấy vật phẩm/sinh vật tử trận trong 10 blocks!"),
+                true
+            );
+            return;
+        }
+
+        int resurrectedCount = 0;
+        for (net.minecraft.world.entity.item.ItemEntity itemEntity : itemEntities) {
+            Vec3 pos = itemEntity.position();
+            itemEntity.discard(); // Tiêu thụ vật phẩm rớt ra
+
+            // Triệu hồi sinh vật được hồi sinh (Zombie minion đồng minh) tại vị trí vật phẩm
+            net.minecraft.world.entity.monster.Zombie minion = net.minecraft.world.entity.EntityType.ZOMBIE.create(level);
+            if (minion != null) {
+                minion.moveTo(pos.x, pos.y, pos.z, level.random.nextFloat() * 360.0F, 0.0F);
+                minion.setHealth(minion.getMaxHealth());
+                minion.setCustomName(Component.literal("§6Tử Linh Phục Sinh §7(" + player.getName().getString() + ")"));
+                minion.setCustomNameVisible(true);
+                minion.addEffect(new MobEffectInstance(MobEffects.GLOWING, 1200, 0, false, false, true));
+                minion.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1200, 2, false, false, true));
+                minion.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1200, 0, false, false, true));
+
+                // Tìm quái địch xung quanh làm mục tiêu tấn công
+                List<Mob> enemies = level.getEntitiesOfClass(Mob.class, minion.getBoundingBox().inflate(15.0D), e -> e != minion && !(e.getCustomName() != null && e.getCustomName().getString().contains("Tử Linh Phục Sinh")));
+                if (!enemies.isEmpty()) {
+                    minion.setTarget(enemies.get(0));
+                }
+
+                level.addFreshEntity(minion);
+                resurrectedCount++;
+
+                // Hiệu ứng hồi sinh rực rỡ
+                level.sendParticles(ParticleTypes.TOTEM_OF_UNDYING, pos.x, pos.y + 1.0D, pos.z, 25, 0.3D, 0.5D, 0.3D, 0.1D);
+                level.sendParticles(ParticleTypes.SOUL, pos.x, pos.y + 1.0D, pos.z, 15, 0.2D, 0.4D, 0.2D, 0.05D);
+            }
+        }
+
+        level.playSound(null, player.getX(), player.getY(), player.getZ(),
+                SoundEvents.TOTEM_USE, SoundSource.PLAYERS, 1.5F, 1.0F);
+        level.playSound(null, player.getX(), player.getY(), player.getZ(),
+                SoundEvents.ZOMBIE_VILLAGER_CURE, SoundSource.PLAYERS, 1.0F, 1.2F);
+
+        player.displayClientMessage(
+            Component.literal("§6§l[ĐÁ LINH HỒN] §fKỹ năng: Tử linh phục sinh! Đã hồi sinh " + resurrectedCount + " sinh vật từ vật phẩm rớt ra! 🧟✨"),
             true
         );
 

@@ -58,13 +58,14 @@ public class ServerboundCycleRealitySubModePacket {
                     );
                 } else if (mainMode == 4) { // Đá Linh Hồn (Soul Stone)
                     int currentSubMode = heldStack.hasTag() ? heldStack.getTag().getInt("SoulSubMode") : 0;
-                    int nextSubMode = (currentSubMode + 1) % 3;
+                    int nextSubMode = (currentSubMode + 1) % 4;
                     heldStack.getOrCreateTag().putInt("SoulSubMode", nextSubMode);
 
                     String subModeMessage = switch (nextSubMode) {
                         case 0 -> "§6[ĐÁ LINH HỒN] §fChế độ phụ: §e1. 🔥 Soul Harvest (Gặt Hái Linh Hồn)";
                         case 1 -> "§6[ĐÁ LINH HỒN] §fChế độ phụ: §b2. 👻 Soul Puppet (Chiêu Hồn Phụ Tá)";
                         case 2 -> "§6[ĐÁ LINH HỒN] §fChế độ phụ: §c3. 💥 Soul Extraction (Tách & Thiêu Rụi Linh Hồn)";
+                        case 3 -> "§6[ĐÁ LINH HỒN] §fChế độ phụ: §a4. 🧟 Kỹ Năng: Tử Linh Phục Sinh";
                         default -> "";
                     };
 
