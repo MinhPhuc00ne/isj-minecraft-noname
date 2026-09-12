@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "infinitygauntlet:item/infinity_gauntlet"
+    "layer0": "weapons:item/infinity_gauntlet"
   },
   "display": {
     "thirdperson_righthand": {

@@ -1,4 +1,4 @@
-package com.minhphuc.infinitygauntlet.item;
+package com.minhphuc.weapons.content.infinitygauntlet;
 
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
@@ -60,7 +60,7 @@ public class InfinityGauntletItem extends Item {
                 player.clearFire();
                 player.setAirSupply(player.getMaxAirSupply());
 
-                // 2. Grant optimal beneficial potion effects seamlessly (without HEALTH_BOOST to prevent heart flicker)
+                // 2. Grant optimal beneficial potion effects seamlessly
                 int duration = 240; // 12 seconds buffer
                 player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, duration, 4, false, false, true));
                 player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, duration, 4, false, false, true));
@@ -99,6 +99,14 @@ public class InfinityGauntletItem extends Item {
             return InteractionResultHolder.fail(stack);
         }
 
+        if (mode == 1) {
+            // Power Stone Mode
+            if (!level.isClientSide() && level instanceof ServerLevel serverLevel && player instanceof ServerPlayer serverPlayer) {
+                PowerStoneAbility.executePowerStone(serverLevel, serverPlayer, stack);
+            }
+            return InteractionResultHolder.sidedSuccess(stack, level.isClientSide());
+        }
+
         if (mode == 7) {
             // SNAP (6 Stones Mode)
             if (!level.isClientSide() && level instanceof ServerLevel serverLevel) {
@@ -125,18 +133,16 @@ public class InfinityGauntletItem extends Item {
                     true
                 );
 
-                // Async spatial scan & batch destruction offloaded to worker pool for Ryzen multi-core optimization
+                // Async spatial scan & batch destruction offloaded to worker pool for multi-core optimization
                 AABB boundingBox = player.getBoundingBox().inflate(100.0D);
 
                 CompletableFuture.supplyAsync(() -> {
-                    // Gather targeted entities in bounding box asynchronously
                     List<Entity> targetEntities = serverLevel.getEntities((Entity) null, boundingBox, entity -> {
                         if (entity == player) return false;
                         return (entity instanceof LivingEntity && entity.isAlive()) || (entity instanceof ItemEntity);
                     });
                     return targetEntities;
                 }).thenAcceptAsync(entities -> {
-                    // Safe execution on Minecraft server main thread
                     serverLevel.getServer().execute(() -> {
                         int killedMobs = 0;
                         int removedItems = 0;
@@ -212,6 +218,7 @@ public class InfinityGauntletItem extends Item {
         tooltip.add(Component.literal("§7- §aFull hiệu ứng tích cực (Sức mạnh X, Hấp thụ, Tốc độ, Nhìn đêm, Nhanh nhẹn...)"));
         tooltip.add(Component.literal(""));
         tooltip.add(Component.literal("§7- Hướng dẫn: Nhấn phím §e[PgUp] §7để chọn chức năng."));
-        tooltip.add(Component.literal("§7- Chọn §6Sức mạnh 6 viên đá (Snap) §7và chuột phải để tiêu diệt tất cả sinh vật trong 100 blocks!"));
+        tooltip.add(Component.literal("§7- §d🔮 Đá Sức Mạnh (Power Stone)§7: Bắn laze hủy diệt. Nếu bị giam cầm trong không gian kín, chuột phải phát xung năng lượng giải thoát."));
+        tooltip.add(Component.literal("§7- §6Sức mạnh 6 viên đá (Snap)§7: Chuột phải để tiêu diệt tất cả sinh vật trong 100 blocks!"));
     }
 }
